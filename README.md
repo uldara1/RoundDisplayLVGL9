@@ -1,12 +1,22 @@
-Modify file LovyanGFX/src/lgfx/v1/platforms/esp32s3
+## Panel_ST7701S Integration
 
+### Overview
 
+The `Panel_ST7701S` class extends the `Panel_RGB` class to provide specific initialization commands for the ST7701S display panel. This class includes methods to initialize the panel and configure its settings.
+
+### Code Changes
+
+#### Panel_RGB.cpp
 
 Panel_RGB.cpp 
 add this code
 
+Open LovyanGFX/src/lgfx/v1/platforms/esp32s3/Panel_RGB.cpp.
 
-```
+
+
+
+```cpp
  //----------------------------------------------------------------------------
     const uint8_t *Panel_ST7701S::getInitCommands(uint8_t listno) const
     {
@@ -106,7 +116,7 @@ bool Panel_ST7701S::init(bool use_reset)
 Panel_RGB.hpp 
 add this code
 
-```
+```cpp
     struct Panel_ST7701S : public Panel_RGB
     {
       bool init(bool) override;
